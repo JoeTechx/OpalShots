@@ -17,14 +17,13 @@ import {
 } from "@/components/ui/form";
 import { z } from "zod";
 import {
-  useCreateUserAccount,
-  useSignInAccount,
+  useCreateUserAccount, useSignInAccount,
 } from "@/lib/react-query/queryAndMutations";
 import { useUserContext } from "@/context/AuthContext";
 
 const SignupForm = () => {
   const { toast } = useToast();
-  const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
+  const { checkAuthUser } = useUserContext();
   const navigate = useNavigate();
 
   // Define your form.
@@ -41,7 +40,7 @@ const SignupForm = () => {
   // Queries
   const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
     useCreateUserAccount();
-  const { mutateAsync: signInAccount, isPending: isSigningInUser } =
+  const { mutateAsync: signInAccount } =
     useSignInAccount();
 
   // Define a submit handler.

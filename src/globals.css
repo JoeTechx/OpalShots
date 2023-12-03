@@ -45,7 +45,7 @@
   }
 
   .body-bold {
-    @apply text-[18px] font-bold leading-[140%];
+    @apply text-[1rem] font-bold leading-[140%];
   }
 
   .body-medium {
@@ -219,7 +219,7 @@
 
   /* Left sidebar */
   .leftsidebar {
-    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
+    @apply hidden md:flex px-6 pt-10 pb-4 flex-col justify-between min-w-[270px] bg-dark-2;
   }
 
   .leftsidebar-link {
