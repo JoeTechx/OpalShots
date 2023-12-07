@@ -362,7 +362,6 @@ export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
     if (!posts) throw Error;
 
     return posts;
-
   } catch (error) {
     console.log(error);
   }
@@ -372,13 +371,11 @@ export async function searchPosts(searchTerm: string) {
     const post = await databases.listDocuments(
       appwriteConfig.databaseId,
       appwriteConfig.postCollectionId,
-   [Query.search('caption', searchTerm)]
+      [Query.search("caption", searchTerm)]
     );
-    if (post) throw Error;
+    if (!post) throw Error;
     return post;
   } catch (error) {
     console.log(error);
   }
 }
-
-
